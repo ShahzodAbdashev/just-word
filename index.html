@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Playfair+Display:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Floating Hearts Background -->
@@ -82,38 +82,116 @@
         <!-- Story Section -->
         <section class="story-section" id="story">
             <div class="container">
-                <h2 class="section-title">Written in the Stars</h2>
-                <div class="story-content">
-                    <div class="story-text">
-                        <div class="poem">
-                            <h3>A Love Like Ours</h3>
-                            <p class="verse">
-                                "In your eyes, I found my home,<br>
-                                In your heart, I found my love,<br>
-                                In your soul, I found my mate,<br>
-                                In you, I found my everything."
-                            </p>
+                <h2 class="section-title">Why I Love You</h2>
+                
+                <!-- Love List Carousel -->
+                <div class="love-carousel-container">
+                    <div class="love-carousel" id="loveCarousel">
+                        <div class="love-item active">
+                            <div class="love-number">1</div>
+                            <div class="love-text">Your laugh</div>
                         </div>
-                        
-                        <div class="love-quote">
-                            <blockquote>
-                                "Being deeply loved by someone gives you strength,<br>
-                                while loving someone deeply gives you courage."
-                                <cite>- Lao Tzu</cite>
-                            </blockquote>
+                        <div class="love-item">
+                            <div class="love-number">2</div>
+                            <div class="love-text">Your video messages</div>
                         </div>
-                        
-                        <div class="romantic-story">
-                            <h4>Our Beginning</h4>
-                            <p>
-                                Like two stars destined to collide, our paths crossed on a magical evening when the world seemed to shimmer with possibility. From that first glance, time stood still, and every heartbeat whispered of a love that would last forever.
-                            </p>
-                            <p>
-                                Through seasons of laughter and tears, adventures and quiet moments, we've built a love story that feels like a beautiful dream we never want to wake from.
-                            </p>
+                        <div class="love-item">
+                            <div class="love-number">3</div>
+                            <div class="love-text">Your voice</div>
+                        </div>
+                        <div class="love-item">
+                            <div class="love-number">4</div>
+                            <div class="love-text">Your intelligence</div>
+                        </div>
+                        <div class="love-item">
+                            <div class="love-number">5</div>
+                            <div class="love-text">Your cooking skills</div>
+                        </div>
+                        <div class="love-item">
+                            <div class="love-number">6</div>
+                            <div class="love-text">Your creativity</div>
+                        </div>
+                        <div class="love-item">
+                            <div class="love-number">7</div>
+                            <div class="love-text">Your music taste</div>
+                        </div>
+                        <div class="love-item">
+                            <div class="love-number">8</div>
+                            <div class="love-text">Your English skills</div>
+                        </div>
+                        <div class="love-item">
+                            <div class="love-number">9</div>
+                            <div class="love-text">Your Love</div>
+                        </div>
+                        <div class="love-item">
+                            <div class="love-number">10</div>
+                            <div class="love-text">Your kindness</div>
+                        </div>
+                        <div class="love-item">
+                            <div class="love-number">11</div>
+                            <div class="love-text">Your complimenting skills</div>
+                        </div>
+                        <div class="love-item">
+                            <div class="love-number">12</div>
+                            <div class="love-text">Your flirting skills (70%)</div>
+                        </div>
+                        <div class="love-item">
+                            <div class="love-number">13</div>
+                            <div class="love-text">Love stickers</div>
+                        </div>
+                        <div class="love-item">
+                            <div class="love-number">14</div>
+                            <div class="love-text">Emotional connection</div>
+                        </div>
+                        <div class="love-item">
+                            <div class="love-number">15</div>
+                            <div class="love-text">Beautiful hair color</div>
+                        </div>
+                        <div class="love-item">
+                            <div class="love-number">16</div>
+                            <div class="love-text">Beautiful Name</div>
+                        </div>
+                        <div class="love-item">
+                            <div class="love-number">17</div>
+                            <div class="love-text">Attentive personality</div>
+                        </div>
+                        <div class="love-item">
+                            <div class="love-number">18</div>
+                            <div class="love-text">Football skills</div>
+                        </div>
+                        <div class="love-item">
+                            <div class="love-number">19</div>
+                            <div class="love-text">Football knowledge</div>
+                        </div>
+                        <div class="love-item">
+                            <div class="love-number">20</div>
+                            <div class="love-text">Football interest</div>
+                        </div>
+                        <div class="love-item">
+                            <div class="love-number">21</div>
+                            <div class="love-text">Dancing</div>
+                        </div>
+                        <div class="love-item">
+                            <div class="love-number">22</div>
+                            <div class="love-text">Sewing Skills</div>
+                        </div>
+                        <div class="love-item">
+                            <div class="love-number">23</div>
+                            <div class="love-text">Massage Skills</div>
+                        </div>
+                        <div class="love-item">
+                            <div class="love-number">∞</div>
+                            <div class="love-text">And many more...</div>
                         </div>
                     </div>
+                    
+                    <div class="carousel-controls">
+                        <button class="carousel-btn prev-btn" id="prevBtn">❮</button>
+                        <div class="carousel-dots" id="carouselDots"></div>
+                        <button class="carousel-btn next-btn" id="nextBtn">❯</button>
+                    </div>
                 </div>
+                
             </div>
         </section>
 
@@ -125,7 +203,31 @@
                 
                 <div class="gallery">
                     <div class="gallery-item">
-                        <img src="media/IMG_2374.png" alt="Garden romance">
+                        <img src="public/media/IMG_2377.png" alt="Romantic sunset">
+                        <div class="gallery-overlay">
+                            <h4>Sunset Dreams</h4>
+                            <p>"Every sunset with you is a promise of tomorrow"</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <img src="public/media/IMG_2376.png" alt="Beach walk">
+                        <div class="gallery-overlay">
+                            <h4>Beach Whispers</h4>
+                            <p>"Walking hand in hand, hearts beating as one"</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <img src="public/media/IMG_2375.png" alt="City lights">
+                        <div class="gallery-overlay">
+                            <h4>City of Love</h4>
+                            <p>"In the glow of city lights, our love shines brightest"</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <img src="public/media/IMG_2374.png" alt="Garden romance">
                         <div class="gallery-overlay">
                             <h4>Garden of Hearts</h4>
                             <p>"Among flowers, our love blooms eternal"</p>
@@ -133,7 +235,7 @@
                     </div>
                     
                     <div class="gallery-item">
-                        <img src="media/IMG_2375.png" alt="Mountain adventure">
+                        <img src="public/media/data2.png" alt="Mountain adventure">
                         <div class="gallery-overlay">
                             <h4>Peak of Love</h4>
                             <p>"Together we can conquer any mountain"</p>
@@ -141,28 +243,7 @@
                     </div>
                     
                     <div class="gallery-item">
-                        <img src="media/IMG_2376.png" alt="Cozy evening">
-                        <div class="gallery-overlay">
-                            <h4>Cozy Moments</h4>
-                            <p>"In quiet moments, our hearts speak loudest"</p>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="/media/IMG_2377.png" alt="Special Memory">
-                        <div class="gallery-overlay">
-                            <h4>Special Memory</h4>
-                            <p>"A moment to remember forever"</p>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="media/data1.png" alt="Cozy evening">
-                        <div class="gallery-overlay">
-                            <h4>Cozy Moments</h4>
-                            <p>"In quiet moments, our hearts speak loudest"</p>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="media/data2.png" alt="Cozy evening">
+                        <img src="public/media/data1.png" alt="Cozy evening">
                         <div class="gallery-overlay">
                             <h4>Cozy Moments</h4>
                             <p>"In quiet moments, our hearts speak loudest"</p>
@@ -189,6 +270,6 @@
     </div>
 
 
-    <script src="/script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

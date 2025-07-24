@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
     createSparkles();
     setupScrollAnimations();
     setupSmoothScrolling();
+    initializeLoveCarousel();
 });
 
 // Login form submission
@@ -52,6 +53,126 @@ loginForm.addEventListener('submit', function(e) {
     }
 });
 
+// Love Carousel Functionality
+let currentLoveIndex = 0;
+let loveItems = [];
+let autoSlideInterval;
+
+function initializeLoveCarousel() {
+    loveItems = document.querySelectorAll('.love-item');
+    const dotsContainer = document.getElementById('carouselDots');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    
+    if (!loveItems.length || !dotsContainer || !prevBtn || !nextBtn) {
+        return; // Elements not found, exit gracefully
+    }
+    
+    // Create dots
+    loveItems.forEach((_, index) => {
+        const dot = document.createElement('div');
+        dot.className = 'dot';
+        if (index === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goToLoveSlide(index));
+        dotsContainer.appendChild(dot);
+    });
+    
+    // Button event listeners
+    prevBtn.addEventListener('click', () => {
+        clearInterval(autoSlideInterval);
+        previousLoveSlide();
+        startAutoSlide();
+    });
+    
+    nextBtn.addEventListener('click', () => {
+        clearInterval(autoSlideInterval);
+        nextLoveSlide();
+        startAutoSlide();
+    });
+    
+    // Start auto-slide
+    startAutoSlide();
+    
+    // Pause on hover
+    const carousel = document.getElementById('loveCarousel');
+    if (carousel) {
+        carousel.addEventListener('mouseenter', () => clearInterval(autoSlideInterval));
+        carousel.addEventListener('mouseleave', startAutoSlide);
+    }
+}
+
+function updateLoveCarousel() {
+    const dots = document.querySelectorAll('.dot');
+    
+    loveItems.forEach((item, index) => {
+        item.classList.remove('active', 'prev', 'next');
+        if (dots[index]) {
+            dots[index].classList.remove('active');
+        }
+        
+        if (index === currentLoveIndex) {
+            item.classList.add('active');
+            if (dots[index]) {
+                dots[index].classList.add('active');
+            }
+        } else if (index === (currentLoveIndex - 1 + loveItems.length) % loveItems.length) {
+            item.classList.add('prev');
+        } else if (index === (currentLoveIndex + 1) % loveItems.length) {
+            item.classList.add('next');
+        }
+    });
+    
+    // Add romantic particle effect on slide change
+    createLoveParticles();
+}
+
+function nextLoveSlide() {
+    currentLoveIndex = (currentLoveIndex + 1) % loveItems.length;
+    updateLoveCarousel();
+}
+
+function previousLoveSlide() {
+    currentLoveIndex = (currentLoveIndex - 1 + loveItems.length) % loveItems.length;
+    updateLoveCarousel();
+}
+
+function goToLoveSlide(index) {
+    clearInterval(autoSlideInterval);
+    currentLoveIndex = index;
+    updateLoveCarousel();
+    startAutoSlide();
+}
+
+function startAutoSlide() {
+    autoSlideInterval = setInterval(nextLoveSlide, 4000);
+}
+
+function createLoveParticles() {
+    const carousel = document.getElementById('loveCarousel');
+    if (!carousel) return;
+    
+    const particles = ['💖', '💕', '💗', '💝', '💞', '💓', '✨', '🌟'];
+    
+    for (let i = 0; i < 5; i++) {
+        const particle = document.createElement('div');
+        particle.textContent = particles[Math.floor(Math.random() * particles.length)];
+        particle.style.cssText = `
+            position: absolute;
+            left: ${Math.random() * 100}%;
+            top: ${Math.random() * 100}%;
+            font-size: ${Math.random() * 10 + 15}px;
+            pointer-events: none;
+            z-index: 10;
+            animation: loveParticleFloat 2s ease-out forwards;
+        `;
+        
+        carousel.appendChild(particle);
+        
+        setTimeout(() => {
+            particle.remove();
+        }, 2000);
+    }
+}
 
 // Create floating hearts
 function createFloatingHearts() {
